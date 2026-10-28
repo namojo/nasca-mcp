@@ -1,0 +1,22 @@
+# ~/.codex/config.toml (프로젝트 단위는 신뢰된 프로젝트의 .codex/config.toml)
+# Codex에는 Claude Code 같은 PreToolUse 훅 설정이 확인되지 않았다. 직접 접근 차단은 아래 도구 표면 축소와
+# OS·NASCA 정책에 기대야 한다. docs/enforcement.md를 본다.
+
+[mcp_servers.workbench]
+command = "python"
+args = ["-m", "workbench.mcp_server"]
+env = { PYTHONPATH = "C:/tools/workbench/src" }
+startup_timeout_sec = 30
+# 첫 workbench_open에서 샌드박스가 뜨는 시간(수십 초에서 수 분)이 들어간다. 기본 60초로는 모자란다.
+tool_timeout_sec = 400
+required = true
+
+# 평문이 밖으로 나가는 유일한 도구는 매번 사람이 승인한다.
+[mcp_servers.workbench.tools.workbench_export]
+approval_mode = "prompt"
+
+# 원본 NASCA MCP는 AI에게 보이지 않게 한다. 작업구역 서버만 안에서 호출한다.
+[mcp_servers.nasca]
+command = "node"
+args = ["C:/tools/nasca-mcp/index.js"]
+enabled = false

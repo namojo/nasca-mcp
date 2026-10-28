@@ -1,0 +1,6 @@
+{
+  "name": "workbench",
+  "version": "0.1.0",
+  "description": "NASCA DRM 보호 문서를 격리 작업구역에서만 AI가 읽고 쓰게 하는 MCP 서버, 직접 접근 차단 훅, 사용 지침",
+  "author": { "name": "해커톤 팀" }
+}

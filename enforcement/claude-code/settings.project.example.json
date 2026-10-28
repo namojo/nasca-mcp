@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(//D:/NASCA/보안문서/**)",
+      "Edit(//D:/NASCA/보안문서/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^(Read|Edit|Write|MultiEdit|NotebookEdit|Grep|Glob|Bash|PowerShell|mcp__.*)$",
+        "hooks": [
+          { "type": "command", "command": "python \"C:/tools/workbench/enforcement/hooks/guard.py\"" }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python \"C:/tools/workbench/enforcement/hooks/session_start.py\"" }
+        ]
+      }
+    ]
+  }
+}

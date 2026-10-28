@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "workbench": {
+      "command": "python",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/launch_mcp.py"]
+    }
+  }
+}

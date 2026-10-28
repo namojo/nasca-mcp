@@ -1,0 +1,7 @@
+{
+  "protected_roots": [
+    "D:/NASCA/보안문서",
+    "%USERPROFILE%/Documents/NASCA"
+  ],
+  "blocked_mcp_servers": ["nasca"]
+}

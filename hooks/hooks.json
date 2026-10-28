@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^(Read|Edit|Write|MultiEdit|NotebookEdit|Grep|Glob|Bash|PowerShell|mcp__.*)$",
+        "hooks": [
+          { "type": "command", "command": "python \"${CLAUDE_PLUGIN_ROOT}/enforcement/hooks/guard.py\"" }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python \"${CLAUDE_PLUGIN_ROOT}/enforcement/hooks/session_start.py\"" }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "nasca-mcp",
+  "description": "NASCA DRM 보호 문서를 격리 작업구역에서 AI가 읽고 쓰게 하는 MCP 서버",
+  "owner": { "name": "namojo" },
+  "plugins": [
+    {
+      "name": "workbench",
+      "source": "./",
+      "description": "보호 문서를 한 번만 복호화해 격리 작업구역(Windows Sandbox)에서 읽고 쓰고, 한 번만 재보호해 내보낸다. 직접 접근 차단 훅과 사용 지침 포함"
+    }
+  ]
+}

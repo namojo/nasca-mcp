@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "disableBypassPermissionsMode": "disable",
+    "deny": [
+      "Read(//D:/NASCA/보안문서/**)",
+      "Edit(//D:/NASCA/보안문서/**)"
+    ]
+  },
+  "deniedMcpServers": [
+    { "serverName": "nasca" }
+  ],
+  "allowManagedPermissionRulesOnly": true,
+  "allowManagedHooksOnly": true,
+  "extraKnownMarketplaces": {
+    "nasca-mcp": {
+      "source": { "source": "github", "repo": "namojo/nasca-mcp" }
+    }
+  },
+  "enabledPlugins": {
+    "workbench@nasca-mcp": true
+  }
+}

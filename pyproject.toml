@@ -1,0 +1,31 @@
+[project]
+name = "workbench"
+version = "0.1.0"
+description = "작업구역 — 복호화된 문서를 격리 환경 안에서만 AI가 읽고 쓰게 하는 MCP 서버"
+requires-python = ">=3.11"
+dependencies = [
+  "mcp>=1.2",
+  "python-docx>=1.1",
+  "openpyxl>=3.1",
+  "python-pptx>=1.0",
+  "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+workbench-mcp = "workbench.mcp_server:main"
+workbench-agent = "workbench.agent.server:main"
+workbench-doctor = "workbench.doctor:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
